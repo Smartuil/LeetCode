@@ -15,8 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1. 两数之和.cpp">
+    <None Include="2. 两数相加.cpp">
       <Filter>源文件</Filter>
-    </ClCompile>
+    </None>
   </ItemGroup>
 </Project>
