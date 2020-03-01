@@ -15,8 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="2. 两数相加.cpp">
+    <ClCompile Include="3. 无重复字符的最长子串.cpp">
       <Filter>源文件</Filter>
-    </None>
+    </ClCompile>
   </ItemGroup>
 </Project>
