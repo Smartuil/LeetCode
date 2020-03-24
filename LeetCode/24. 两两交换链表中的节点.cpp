@@ -50,6 +50,8 @@ int main() {
 	w->next = e;
 	e->next = nullptr;
 	r->next = nullptr;
+
+
 	ListNode* ret = solution->swapPairs(q);
 	while (ret)
 	{
