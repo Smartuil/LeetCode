@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="26. 删除排序数组中的重复项.cpp">
+    <ClCompile Include="27. 移除元素.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
