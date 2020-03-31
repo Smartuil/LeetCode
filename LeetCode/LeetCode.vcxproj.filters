@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="30. 串联所有单词的子串.cpp">
+    <ClCompile Include="31. 下一个排列.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
