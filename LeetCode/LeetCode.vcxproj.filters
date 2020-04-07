@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="35. 搜索插入位置.cpp">
+    <ClCompile Include="36. 有效的数独.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
