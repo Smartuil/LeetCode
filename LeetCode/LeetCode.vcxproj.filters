@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="36. 有效的数独.cpp">
+    <ClCompile Include="37. 解数独.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

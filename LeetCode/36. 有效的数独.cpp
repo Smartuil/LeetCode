@@ -110,3 +110,4 @@ int main() {
 	cout << solution->isValidSudoku(board);
 	return 0;
 }
+
