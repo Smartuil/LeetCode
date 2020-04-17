@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="42.接雨水.cpp">
+    <ClCompile Include="43. 字符串相乘.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
