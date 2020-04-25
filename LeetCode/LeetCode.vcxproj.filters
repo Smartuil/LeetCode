@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="47. 全排列 II.cpp">
+    <ClCompile Include="48. 旋转图像.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
