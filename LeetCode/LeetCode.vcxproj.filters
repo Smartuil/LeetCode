@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="49. 字母异位词分组.cpp">
+    <ClCompile Include="50. Pow(x, n).cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
