@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="50. Pow(x, n).cpp">
+    <ClCompile Include="51. N皇后.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
