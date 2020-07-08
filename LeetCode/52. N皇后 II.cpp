@@ -79,7 +79,7 @@ public:
 		queens.resize(n);
 
 		backtrack(0);
-		return output;
+		return solutionNum;
 	}
 };
 
