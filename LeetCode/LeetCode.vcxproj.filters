@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="60. 第k个排列.cpp">
+    <ClCompile Include="343. 整数拆分.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
