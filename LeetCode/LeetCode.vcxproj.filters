@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LCP 13. 寻宝.cpp">
+    <ClCompile Include="60. 第k个排列.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
