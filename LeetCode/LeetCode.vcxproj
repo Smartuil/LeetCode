@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 05. 替换空格.cpp" />
+    <ClCompile Include="剑指 Offer 06. 从尾到头打印链表.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
