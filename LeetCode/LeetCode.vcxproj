@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 03. 数组中重复的数字.cpp" />
+    <ClCompile Include="剑指 Offer 04. 二维数组中的查找.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
