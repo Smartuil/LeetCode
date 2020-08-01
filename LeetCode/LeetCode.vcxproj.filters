@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 10- II. 青蛙跳台阶问题.cpp">
+    <ClCompile Include="剑指 Offer 12. 矩阵中的路径.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
