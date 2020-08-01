@@ -90,7 +90,7 @@ public:
 
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
-				if (board[i][j] = word[index]) {
+				if (board[i][j] == word[index]) {
 					bool temp = recursion(i, j, index, flag, board, word);
 					if (temp == true) {
 						return temp;

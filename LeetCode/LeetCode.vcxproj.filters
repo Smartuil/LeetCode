@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 12. 矩阵中的路径.cpp">
+    <ClCompile Include="删除排序数组中的重复项.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
