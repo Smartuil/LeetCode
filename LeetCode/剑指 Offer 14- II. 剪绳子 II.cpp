@@ -13,7 +13,7 @@ public:
 			return 2;
 		}
 		long ret = 1;
-		while (n > 4) {
+		while (n > 5) {
 			ret %= 1000000007;
 			ret = ret * 3 % 1000000007;
 			n -= 3;

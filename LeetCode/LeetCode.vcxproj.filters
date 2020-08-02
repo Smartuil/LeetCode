@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 14- II. 剪绳子 II.cpp">
+    <ClCompile Include="剑指 Offer 15. 二进制中1的个数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
