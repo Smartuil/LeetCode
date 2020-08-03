@@ -137,6 +137,6 @@ public:
 
 int main() {
 	Solution *solution = new Solution();
-	cout << solution->isNumber("95.54e53");
+	cout << solution->isNumber("1.2.3");
 	return 0;
 }
