@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 17. 打印从1到最大的n位数.cpp" />
+    <ClCompile Include="剑指 Offer 18. 删除链表的节点.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
