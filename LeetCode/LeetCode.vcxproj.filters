@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="415. 字符串相加.cpp">
+    <ClCompile Include="剑指 Offer 26. 树的子结构.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
