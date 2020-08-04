@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 28. 对称的二叉树.cpp">
+    <ClCompile Include="剑指 Offer 29. 顺时针打印矩阵.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
