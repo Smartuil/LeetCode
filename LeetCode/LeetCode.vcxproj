@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 26. 树的子结构.cpp" />
+    <ClCompile Include="剑指 Offer 27. 二叉树的镜像.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
