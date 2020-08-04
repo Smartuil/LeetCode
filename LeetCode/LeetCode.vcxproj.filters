@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 29. 顺时针打印矩阵.cpp">
+    <ClCompile Include="剑指 Offer 30. 包含min函数的栈.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
