@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 32 - III. 从上到下打印二叉树 III.cpp" />
+    <ClCompile Include="剑指 Offer 33. 二叉搜索树的后序遍历序列.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
