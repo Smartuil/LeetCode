@@ -3,7 +3,7 @@
 #include "vector"
 #include <stack>
 using namespace std;
-
+//https://blog.csdn.net/smileiam/article/details/88732245
 vector<int> findMaxRight(vector<int> &arr) {
 	if(arr.size() == 0) {
 		return arr;

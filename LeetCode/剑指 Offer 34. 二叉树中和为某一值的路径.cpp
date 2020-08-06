@@ -15,8 +15,6 @@ struct TreeNode {
 
 class Solution {
 public:
-	vector<int> leaf;
-
 	void order(TreeNode *root, vector<vector<int>>& ret, vector<int>& path, int &inSum, int sum) {
 		
 		if (root) {
@@ -52,14 +50,14 @@ public:
 		vector<int> paths;
 		int inSum = 0;
 		order(root, ret, paths, inSum, sum);
-		for (int i = 0; i < leaf.size(); i++) {
-			if (leaf.size() == 0) {
-				return {};
-			}
-			if (leaf[i] != 1) {
-				return {};
-			}
-		}
+		//for (int i = 0; i < leaf.size(); i++) {
+		//	if (leaf.size() == 0) {
+		//		return {};
+		//	}
+		//	if (leaf[i] != 1) {
+		//		return {};
+		//	}
+		//}
 		return ret;
 	}
 };
