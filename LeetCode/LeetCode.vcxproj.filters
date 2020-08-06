@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 38. 字符串的排列.cpp">
+    <ClCompile Include="剑指 Offer 40. 最小的k个数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -13,7 +13,7 @@ using namespace std;
 //		return s;
 //	}
 //};
-
+//https://leetcode-cn.com/problems/permutation-sequence/solution/c-ji-bai-100-3-xing-dai-ma-shi-xian-by-fu-guang/
 class Solution {
 	static const vector<int> fac;
 public:

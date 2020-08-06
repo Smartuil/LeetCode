@@ -2,7 +2,7 @@
 #include "vector"
 
 using namespace std;
-
+//https://leetcode-cn.com/problems/next-permutation/solution/c-0msjian-dan-shi-xian-by-lcl-17/
 class Solution {
 public:
 	void nextPermutation(vector<int>& nums) {
@@ -13,7 +13,7 @@ public:
 		if (pos > 0) {
 			int start = pos;
 			for (; start < nums.size(); start++) {
-				if (nums[start] > nums[pos - 1]) {
+				if (nums[start] > nums[pos - 1]) {//寻找第一个大于nums[pos - 1]的数
 					swap(nums[start], nums[pos - 1]);
 					break;
 				}
