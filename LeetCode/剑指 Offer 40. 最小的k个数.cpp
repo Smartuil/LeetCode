@@ -2,6 +2,7 @@
 #include "vector"
 #include <map>
 #include <set>
+#include <queue>
 using namespace std;
 
 //class Solution {
@@ -28,12 +29,34 @@ using namespace std;
 //	}
 //};
 
+//class Solution {
+//public:
+//	vector<int> getLeastNumbers(vector<int>& arr, int k) {
+//		vector<int> vec(k, 0);
+//		sort(arr.begin(), arr.end());
+//		for (int i = 0; i < k; ++i) vec[i] = arr[i];
+//		return vec;
+//	}
+//};
+
 class Solution {
 public:
 	vector<int> getLeastNumbers(vector<int>& arr, int k) {
-		vector<int> vec(k, 0);
-		sort(arr.begin(), arr.end());
-		for (int i = 0; i < k; ++i) vec[i] = arr[i];
+		vector<int>vec(k, 0);
+		if (k == 0) return vec; // 排除 0 的情况
+		priority_queue<int>Q;//构造一个空的优先队列（此优先队列默认为大顶堆）
+		for (int i = 0; i < k; ++i) 
+			Q.push(arr[i]);
+		for (int i = k; i < (int)arr.size(); ++i) {
+			if (Q.top() > arr[i]) {
+				Q.pop();
+				Q.push(arr[i]);
+			}
+		}
+		for (int i = 0; i < k; ++i) {
+			vec[i] = Q.top();
+			Q.pop();
+		}
 		return vec;
 	}
 };
