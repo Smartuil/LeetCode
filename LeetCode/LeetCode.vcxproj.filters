@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 42. 连续子数组的最大和.cpp">
+    <ClCompile Include="剑指 Offer 43. 1～n整数中1出现的次数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
