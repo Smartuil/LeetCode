@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 55 - I. 二叉树的深度.cpp">
+    <ClCompile Include="剑指 Offer 55 - II. 平衡二叉树.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
