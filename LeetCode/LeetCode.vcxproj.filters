@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 49. 丑数.cpp">
+    <ClCompile Include="剑指 Offer 50. 第一个只出现一次的字符.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
