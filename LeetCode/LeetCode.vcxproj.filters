@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 45. 把数组排成最小的数.cpp">
+    <ClCompile Include="剑指 Offer 47. 礼物的最大价值.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
