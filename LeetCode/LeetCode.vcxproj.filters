@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 56 - II. 数组中数字出现的次数 II.cpp">
+    <ClCompile Include="剑指 Offer 57. 和为s的两个数字.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
