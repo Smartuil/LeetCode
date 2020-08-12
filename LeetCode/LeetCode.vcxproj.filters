@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 61. 扑克牌中的顺子.cpp">
+    <ClCompile Include="剑指 Offer 62. 圆圈中最后剩下的数字.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
