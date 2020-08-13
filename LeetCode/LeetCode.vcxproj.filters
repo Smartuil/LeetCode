@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 66. 构建乘积数组.cpp">
+    <ClCompile Include="剑指 Offer 68 - I. 二叉搜索树的最近公共祖先.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
