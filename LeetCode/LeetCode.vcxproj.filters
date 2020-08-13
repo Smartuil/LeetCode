@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 65. 不用加减乘除做加法.cpp">
+    <ClCompile Include="剑指 Offer 66. 构建乘积数组.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
