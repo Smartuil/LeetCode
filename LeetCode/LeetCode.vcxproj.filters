@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 63. 股票的最大利润.cpp">
+    <ClCompile Include="剑指 Offer 64. 求1+2+…+n.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
