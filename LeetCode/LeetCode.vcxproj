@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 68 - I. 二叉搜索树的最近公共祖先.cpp" />
+    <ClCompile Include="剑指 Offer 59 - II. 队列的最大值.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
