@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 62. 圆圈中最后剩下的数字.cpp" />
+    <ClCompile Include="剑指 Offer 65. 不用加减乘除做加法.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
