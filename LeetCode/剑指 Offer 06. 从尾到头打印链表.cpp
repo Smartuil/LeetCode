@@ -13,21 +13,39 @@ struct ListNode {
 class Solution {
 public:
 	vector<int> reversePrint(ListNode* head) {
+		//vector<int> ret;
+		//ListNode* pre = nullptr;
+		//ListNode* cur = head;
+		//ListNode* tmp = nullptr;
+		//while (cur) {
+		//	tmp = cur->next;
+		//	cur->next = pre;
+		//	pre = cur;
+		//	cur = tmp;
+		//}
+
+		//while (pre) {
+		//	ret.push_back(pre->val);
+		//	pre = pre->next;
+		//}
+		//return ret;
+
 		vector<int> ret;
 		ListNode* pre = nullptr;
-		ListNode* cur = head;
 		ListNode* tmp = nullptr;
-		while (cur) {
-			tmp = cur->next;
-			cur->next = pre;
-			pre = cur;
-			cur = tmp;
+		while (head)
+		{
+			tmp = head->next;
+			head->next = pre;
+			pre = head;
+			head = tmp;
 		}
-
-		while (pre) {
+		while (pre)
+		{
 			ret.push_back(pre->val);
 			pre = pre->next;
 		}
+
 		return ret;
 	}
 };

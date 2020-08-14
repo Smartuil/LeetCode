@@ -3,6 +3,7 @@
 #include <map>
 #include <set>
 #include <queue>
+#include <stdlib.h>
 using namespace std;
 
 //class Solution {
@@ -39,25 +40,54 @@ using namespace std;
 //	}
 //};
 
+//class Solution {
+//public:
+//	vector<int> getLeastNumbers(vector<int>& arr, int k) {
+//		vector<int>vec(k, 0);
+//		if (k == 0) return vec; // 排除 0 的情况
+//		priority_queue<int>Q;//构造一个空的优先队列（此优先队列默认为大顶堆）
+//		for (int i = 0; i < k; ++i) 
+//			Q.push(arr[i]);
+//		for (int i = k; i < (int)arr.size(); ++i) {
+//			if (Q.top() > arr[i]) {
+//				Q.pop();
+//				Q.push(arr[i]);
+//			}
+//		}
+//		for (int i = 0; i < k; ++i) {
+//			vec[i] = Q.top();
+//			Q.pop();
+//		}
+//		return vec;
+//	}
+//};
+
 class Solution {
 public:
 	vector<int> getLeastNumbers(vector<int>& arr, int k) {
-		vector<int>vec(k, 0);
-		if (k == 0) return vec; // 排除 0 的情况
-		priority_queue<int>Q;//构造一个空的优先队列（此优先队列默认为大顶堆）
-		for (int i = 0; i < k; ++i) 
-			Q.push(arr[i]);
-		for (int i = k; i < (int)arr.size(); ++i) {
-			if (Q.top() > arr[i]) {
-				Q.pop();
-				Q.push(arr[i]);
-			}
+		int n = arr.size();
+		if (n == k) return arr;
+		if (n < k || k <= 0 || n == 0) return vector<int>();
+		int l = 0, r = n - 1;
+		int index = partition(arr, l, r);
+		while (index != k - 1) {
+			if (index > k - 1) r = index - 1;
+			else l = index + 1;
+			index = partition(arr, l, r);
 		}
-		for (int i = 0; i < k; ++i) {
-			vec[i] = Q.top();
-			Q.pop();
+		return vector<int>(arr.begin(), arr.begin() + k);
+	}
+
+	int partition(vector<int>&arr, int l, int r) {
+		int key = arr[l];
+		while (l < r) {
+			while (l < r && arr[r] >= key) r--;
+			arr[l] = arr[r];
+			while (l < r && arr[l] <= key) l++;
+			arr[r] = arr[l];
 		}
-		return vec;
+		arr[l] = key;
+		return l;
 	}
 };
 

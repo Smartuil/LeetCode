@@ -18,7 +18,7 @@ public:
 			s.replace(s.find(" "), 1, "%20");
 			index = s.find(" ");
 			ret.append(s.substr(0, index));
-			if(index!=-1)
+			if (index != -1)
 				s = s.substr(index);
 			else
 			{
@@ -51,6 +51,6 @@ public:
 
 int main() {
 	Solution *solution = new Solution();
-	cout << solution->replaceSpace("%20");
+	cout << solution->replaceSpace("We are happy.");
 	return 0;
 }

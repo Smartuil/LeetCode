@@ -35,22 +35,42 @@ public:
 
 	//}
 
+	//int movingCount(int m, int n, int k) {
+	//	vector<vector<int>> flag(m, vector<int>(n, 0));
+	//	return dfs(0, 0, m, n, k, flag);
+	//}
+
+	//int dfs(int i, int j, int m, int n, int k, vector<vector<int>>& flag) {
+	//	if (i<0 || i>m - 1 || j<0 || j>n - 1 || (i / 100 + i / 10 + i % 10 + j / 100 + j / 10 + j % 10) > k || flag[i][j] == 1) {
+	//		return 0;
+	//	}
+
+	//	flag[i][j] = 1;
+	//	return dfs(i + 1, j, m, n, k, flag) +
+	//		dfs(i, j + 1, m, n, k, flag) +
+	//		dfs(i - 1, j, m, n, k, flag) +
+	//		dfs(i, j - 1, m, n, k, flag) + 1;
+	//}
+
 	int movingCount(int m, int n, int k) {
 		vector<vector<int>> flag(m, vector<int>(n, 0));
 		return dfs(0, 0, m, n, k, flag);
 	}
 
-	int dfs(int i, int j, int m, int n, int k, vector<vector<int>>& flag) {
-		if (i<0 || i>m - 1 || j<0 || j>n - 1 || (i / 100 + i / 10 + i % 10 + j / 100 + j / 10 + j % 10) > k || flag[i][j] == 1) {
+	int dfs(int i, int j, int m, int n, int k, vector<vector<int>> &flag) {
+		if (i<0 || i>m - 1 || j<0  || j>n - 1 ||
+			(i / 100 + i / 10 + i % 10+ j / 100 + j / 10 + j % 10 )>k||
+			flag[i][j]==1
+			) {
 			return 0;
 		}
-
 		flag[i][j] = 1;
-		return dfs(i + 1, j, m, n, k, flag) +
-			dfs(i, j + 1, m, n, k, flag) +
-			dfs(i - 1, j, m, n, k, flag) +
-			dfs(i, j - 1, m, n, k, flag) + 1;
+		return dfs(i - 1, j, m, n, k, flag) + 
+			dfs(i + 1, j, m, n, k, flag) +
+			dfs(i, j - 1, m, n, k, flag) + 
+			dfs(i, j + 1, m, n, k, flag) + 1;
 	}
+
 };
 
 int main() {

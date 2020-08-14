@@ -46,8 +46,63 @@ public:
 	//	return false;
 	//}
 
-	bool recursion(int i, int j, int index, vector<vector<int>> &flag, vector<vector<char>>& board, string &word) {
-		if (i<0 || i>row - 1 || j<0 || j>col - 1) {
+	//bool recursion(int i, int j, int index, vector<vector<int>> &flag, vector<vector<char>>& board, string &word) {
+	//	if (i<0 || i>row - 1 || j<0 || j>col - 1) {
+	//		return false;
+	//	}
+	//	else if (board[i][j] == word[index] && flag[i][j] == 0) {
+	//		if (index == len - 1) {
+	//			return true;
+	//		}
+	//		else
+	//		{
+	//			flag[i][j] = 1;
+	//			//recursion(i + 1, j, index + 1, flag, board, word);
+	//			//recursion(i - 1, j, index + 1, flag, board, word);
+	//			//recursion(i, j + 1, index + 1, flag, board, word);
+	//			//recursion(i, j - 1, index + 1, flag, board, word);
+	//			if ((recursion(i + 1, j, index + 1, flag, board, word) ||//下
+	//				recursion(i - 1, j, index + 1, flag, board, word) ||//上
+	//				recursion(i, j + 1, index + 1, flag, board, word) ||//右
+	//				recursion(i, j - 1, index + 1, flag, board, word)) == false) {//左
+	//				flag[i][j] = 0;
+	//				return false;
+	//			}
+	//			else
+	//			{
+	//				return true;
+	//			}
+	//		}
+	//	}
+	//	else
+	//	{
+	//		return false;
+	//	}
+	//}
+
+	//bool exist(vector<vector<char>>& board, string word) {
+	//	row = board.size();
+	//	col = board[0].size();
+	//	len = word.size();
+	//	int index = 0;
+
+	//	vector<vector<int>> flag(row, vector<int>(col, 0));
+
+	//	for (int i = 0; i < row; i++) {
+	//		for (int j = 0; j < col; j++) {
+	//			if (board[i][j] == word[index]) {
+	//				bool temp = recursion(i, j, index, flag, board, word);
+	//				if (temp == true) {
+	//					return temp;
+	//				}
+	//			}
+	//		}
+	//	}
+	//	return false;
+	//}
+
+	bool recursion(vector<vector<char>>& board, string word, int i, int j, int index, vector<vector<int>> &flag) {
+		if (i<0 || i>row-1 || j<0 || j>col-1) {
 			return false;
 		}
 		else if (board[i][j] == word[index] && flag[i][j] == 0) {
@@ -57,20 +112,17 @@ public:
 			else
 			{
 				flag[i][j] = 1;
-				//recursion(i + 1, j, index + 1, flag, board, word);
-				//recursion(i - 1, j, index + 1, flag, board, word);
-				//recursion(i, j + 1, index + 1, flag, board, word);
-				//recursion(i, j - 1, index + 1, flag, board, word);
-				if ((recursion(i + 1, j, index + 1, flag, board, word) ||//下
-					recursion(i - 1, j, index + 1, flag, board, word) ||//上
-					recursion(i, j + 1, index + 1, flag, board, word) ||//右
-					recursion(i, j - 1, index + 1, flag, board, word)) == false) {//左
-					flag[i][j] = 0;
-					return false;
+				if (recursion(board, word, i - 1, j, index + 1, flag) ||
+					recursion(board, word, i + 1, j, index + 1, flag) ||
+					recursion(board, word, i, j + 1, index + 1, flag) ||
+					recursion(board, word, i, j - 1, index + 1, flag)
+					) {
+					return true;
 				}
 				else
 				{
-					return true;
+					flag[i][j] = 0;
+					return false;
 				}
 			}
 		}
@@ -85,13 +137,11 @@ public:
 		col = board[0].size();
 		len = word.size();
 		int index = 0;
-
 		vector<vector<int>> flag(row, vector<int>(col, 0));
-
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
 				if (board[i][j] == word[index]) {
-					bool temp = recursion(i, j, index, flag, board, word);
+					bool temp = recursion(board, word, i, j, index, flag);
 					if (temp == true) {
 						return temp;
 					}
@@ -108,12 +158,12 @@ private:
 
 int main() {
 	Solution *solution = new Solution();
-	vector<vector<char>> board = { {'a'}
-		//{'A', 'B', 'C', 'E' }, 
-		//{'S', 'F', 'C', 'S'},
-		//{'A', 'D', 'E', 'E'}
+	vector<vector<char>> board = {
+		{'A', 'B', 'C', 'E' },
+		{'S', 'F', 'C', 'S'},
+		{'A', 'D', 'E', 'E'}
 	};
 	
-	cout << solution->exist(board, "b");
+	cout << solution->exist(board, "ABCCEDAQ");
 	return 0;
 }

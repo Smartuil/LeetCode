@@ -3,6 +3,7 @@
 #include <algorithm>
 #include "queue"
 #include "set"
+#include <unordered_set>
 using namespace std;
 
 class Solution {
@@ -11,7 +12,7 @@ public:
 		if (nums.size() == 0) {
 			return 0;
 		}
-		vector<int> count(nums.size(), 1);
+		//vector<int> count(nums.size(), 1);
 		//for (int i = 0; i < nums.size(); i++) {
 		//	for (int j = i + 1; j < nums.size(); j++) {
 		//		if (nums[i] == nums[j] && count[j] == 1) {
@@ -30,23 +31,33 @@ public:
 		//	}
 		//}
 		//return repeat;
-		vector<int> arr(nums.size(), 0);
-		int ans;
 
+		//vector<int> arr(nums.size(), 0);
+		//int ans;
+
+		//for (int i = 0; i < nums.size(); ++i) {
+		//	arr[nums[i]]++;
+		//	if (arr[nums[i]] > 1) {
+		//		ans = nums[i];
+		//		break;
+		//	}
+		//}
+		//return ans;
+
+
+		unordered_set<int> s;
 		for (int i = 0; i < nums.size(); ++i) {
-			arr[nums[i]]++;
-			if (arr[nums[i]] > 1) {
-				ans = nums[i];
-				break;
+			if (!s.insert(nums[i]).second) {
+				return nums[i];
 			}
 		}
-		return ans;
+		return -1;
 	}
 };
 
 int main() {
 	Solution *solution = new Solution;
-	vector<int> nums = { 2, 3, 1, 0, 2, 5, 3 };
+	vector<int> nums = { 0, 1, 2, 3, 4, 11, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
 	cout << solution->findRepeatNumber(nums);
 
 	return 0;
