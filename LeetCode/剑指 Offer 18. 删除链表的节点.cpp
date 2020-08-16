@@ -10,24 +10,42 @@ using namespace std;
      ListNode(int x) : val(x), next(NULL) {}
 };
 
-class Solution {
-public:
-	ListNode* deleteNode(ListNode* head, int val) {
-		
-		ListNode * pre = new ListNode(0);
-		ListNode * root = pre;
-		pre->next = head;
-		while (head) {
-			if (head->val == val) {
-				pre->next = head->next;
-			}
-			pre = head;
-			head = head->next;
-		}
-		root = root->next;
-		return root;
-	}
-};
+//class Solution {
+//public:
+//	ListNode* deleteNode(ListNode* head, int val) {
+//		
+//		ListNode * pre = new ListNode(0);
+//		ListNode * root = pre;
+//		pre->next = head;
+//		while (head) {
+//			if (head->val == val) {
+//				pre->next = head->next;
+//			}
+//			pre = head;
+//			head = head->next;
+//		}
+//		root = root->next;
+//		return root;
+//	}
+//};
+
+ class Solution {
+ public:
+	 ListNode* deleteNode(ListNode* head, int val) {		
+		 ListNode* pre = new ListNode(0);
+		 ListNode* root = pre;
+		 pre->next = head;
+		 while (head) {
+			 if (head->val == val) {
+				 pre->next = head->next;
+			 }
+			 pre = head;
+			 head = head->next;
+		 }
+		 root = root->next;
+		 return root;
+	 }
+ };
 
 int main() {
 	Solution *solution = new Solution();

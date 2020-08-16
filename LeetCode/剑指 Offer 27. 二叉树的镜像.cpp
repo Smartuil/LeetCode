@@ -24,13 +24,25 @@ public:
 	//	}
 	//}
 
+	//TreeNode* mirrorTree(TreeNode* root) {
+	//	if (root == nullptr) {
+	//		return nullptr;
+	//	}
+	//	TreeNode* tmp = root->left;
+	//	root->left = mirrorTree(root->right);
+	//	root->right = mirrorTree(tmp);
+	//	return root;
+	//}
+
 	TreeNode* mirrorTree(TreeNode* root) {
 		if (root == nullptr) {
 			return nullptr;
 		}
-		TreeNode* tmp = root->left;
-		root->left = mirrorTree(root->right);
-		root->right = mirrorTree(tmp);
+		TreeNode* tmp = root->right;
+		//root->left = mirrorTree(root->right);
+		//root->right = mirrorTree(tmp);
+		root->right = mirrorTree(root->left);
+		root->left = mirrorTree(tmp);
 		return root;
 	}
 };

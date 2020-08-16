@@ -13,15 +13,27 @@ struct ListNode {
 
 class Solution {
 public:
+	//ListNode* reverseList(ListNode* head) {
+	//	ListNode* pre = nullptr;
+	//	ListNode* cur = head;
+
+	//	while (cur) {
+	//		ListNode* tmp = cur->next;
+	//		cur->next = pre;
+	//		pre = cur;
+	//		cur = tmp;
+	//	}
+	//	return pre;
+	//}
+
 	ListNode* reverseList(ListNode* head) {
 		ListNode* pre = nullptr;
 		ListNode* cur = head;
-
-		while (cur) {
-			ListNode* tmp = cur->next;
-			cur->next = pre;
-			pre = cur;
-			cur = tmp;
+		while (head) {
+			cur = head->next;
+			head->next = pre;
+			pre = head;
+			head = cur;
 		}
 		return pre;
 	}

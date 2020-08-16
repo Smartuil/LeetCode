@@ -19,7 +19,7 @@ public:
 		while (head) {
 			head = head->next;
 			count++;
-		}
+		} 
 		while (root && count > k) {
 			root = root->next;
 			count--;

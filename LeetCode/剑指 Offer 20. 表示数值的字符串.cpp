@@ -95,48 +95,101 @@ using namespace std;
 //	}
 //};
 
+//class Solution {
+//public:
+//	using sIter = string::iterator;//typedef
+//	sIter sEnd;
+//
+//	bool scanNumber(sIter& iter) {//找数字，找不到返回false
+//		bool have_number = false;
+//		while (iter != sEnd && (*iter) >= '0' && (*iter) <= '9') {
+//			have_number = true;
+//			iter++;
+//		}
+//		return have_number;
+//	}
+//
+//	bool scanInteger(sIter& iter) {//找数字，找不到返回false(首位可为+或-)
+//		if (*iter == '+' || *iter == '-') iter++;
+//		return scanNumber(iter);
+//	}
+//
+//	bool isNumber(string s) {
+//		if (s.empty()) return false;
+//		sIter iter = s.begin();
+//		sEnd = s.end();
+//		while (*iter == ' ') iter++;//去空格
+//		bool result = scanInteger(iter);//找A整数位
+//		if (*iter == '.') {//存在小数点，则找B小数位
+//			iter++;
+//			result |= scanNumber(iter);//小数位和整数位存在一个即可
+//		}
+//		if (*iter == 'e') {//存在e，则找指数位
+//			iter++;
+//			result = result && scanInteger(iter);//若有e，指数位C必须存在
+//
+//		}
+//		if(iter!=sEnd)
+//			while (*iter == ' ') iter++;//去空格
+//		return result && iter == s.end();//若到达结尾且满足之前规则，返回true
+//	}
+//};
+
 class Solution {
 public:
-	using sIter = string::iterator;//typedef
-	sIter sEnd;
-
-	bool scanNumber(sIter& iter) {//找数字，找不到返回false
-		bool have_number = false;
-		while (iter != sEnd && (*iter) >= '0' && (*iter) <= '9') {
-			have_number = true;
-			iter++;
-		}
-		return have_number;
-	}
-
-	bool scanInteger(sIter& iter) {//找数字，找不到返回false(首位可为+或-)
-		if (*iter == '+' || *iter == '-') iter++;
-		return scanNumber(iter);
-	}
-
 	bool isNumber(string s) {
-		if (s.empty()) return false;
-		sIter iter = s.begin();
-		sEnd = s.end();
-		while (*iter == ' ') iter++;//去空格
-		bool result = scanInteger(iter);//找A整数位
-		if (*iter == '.') {//存在小数点，则找B小数位
-			iter++;
-			result |= scanNumber(iter);//小数位和整数位存在一个即可
+		if (s.size() == 0) {
+			return false;
 		}
-		if (*iter == 'e') {//存在e，则找指数位
-			iter++;
-			result = result && scanInteger(iter);//若有e，指数位C必须存在
+		if (s.size() == 1 && s[0] == ' ') {
+			return false;
+		}
+		{
+			//去掉首位空格
+			while (s[0] == ' ') {
+				s = s.substr(1);
+			}
+			int len = s.size();
+			while (s[len - 1] == ' ') {
+				int index = s.find_last_of(' ');
+				s = s.substr(0, index);
+				len = s.size();
+			}
+		}
+		bool numFlag = false;
+		bool dotFlag = false;
+		bool eFlag = false;
+		for (int i = 0; i < s.size(); ++i) {
+			//判定为数字，则标记numFlag
+			if (s[i] >= '0'&&s[i] <= '9') {
+				numFlag = true;
+			}
+			//判定为.  需要没出现过.并且没出现过e
+			else if (s[i] == '.' && !dotFlag && !eFlag) {
+				dotFlag = true;
+			}
+			//判定为e，需要没出现过e，并且出过数字了
+			else if ((s[i] == 'e' || s[i] == 'E') && !eFlag&&numFlag) {
+				eFlag = true;
+				numFlag = false;//为了避免123e这种请求，出现e之后就标志为false
+			}
+			//判定为+-符号，只能出现在第一位或者紧接e后面
+			else if ((s[i] == '+' || s[i] == '-') && (i == 0 || s[i - 1] == 'e' || s[i - 1] == 'E')) {
 
+			}
+			//其他情况，都是非法的
+			else
+			{
+				return false;
+			}
 		}
-		if(iter!=sEnd)
-			while (*iter == ' ') iter++;//去空格
-		return result && iter == s.end();//若到达结尾且满足之前规则，返回true
+
+		return numFlag;
 	}
 };
 
 int main() {
 	Solution *solution = new Solution();
-	cout << solution->isNumber("1.2.3");
+	cout << solution->isNumber("1  ");
 	return 0;
 }

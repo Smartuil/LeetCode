@@ -81,10 +81,20 @@ public:
 	int partition(vector<int>&arr, int l, int r) {
 		int key = arr[l];
 		while (l < r) {
-			while (l < r && arr[r] >= key) r--;
-			arr[l] = arr[r];
-			while (l < r && arr[l] <= key) l++;
-			arr[r] = arr[l];
+			while (l < r&&arr[r] >= key) {
+				r--;
+			}
+			if (l < r) {
+				arr[l] = arr[r];
+				l++;
+			}
+			while (l < r&&arr[l] <= key) {
+				l++;
+			}
+			if (l < r) {
+				arr[r] = arr[l];
+				r--;
+			}
 		}
 		arr[l] = key;
 		return l;

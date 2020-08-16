@@ -8,31 +8,44 @@ using namespace std;
 class Solution {
 public:
 
+	//bool validateStackSequences(vector<int>& pushed, vector<int>& popped) {
+	//	stack<int> s;
+	//	int i = 0;
+	//	//while(i < pushed.size()) {
+	//	//	while(j < popped.size()) {
+	//	//		if (pushed[i] != popped[j]) {
+	//	//			s.push(pushed[i]);
+	//	//			i++;
+	//	//		}
+	//	//		else if(pushed[++i] == popped[++j])
+	//	//		{
+	//	//			j++;
+	//	//		}
+	//	//		else if(s.top() == popped[j])
+	//	//		{
+	//	//			j++;
+	//	//			s.pop();
+	//	//		}
+	//	//	}
+	//	//}
+	//	for (auto j : pushed) {
+	//		s.push(j);
+	//		while (!s.empty() && s.top() == popped[i]) {
+	//			s.pop();
+	//			i++;
+	//		}
+	//	}
+	//	return s.empty();
+	//}
+
 	bool validateStackSequences(vector<int>& pushed, vector<int>& popped) {
 		stack<int> s;
-		int i = 0;
-		//while(i < pushed.size()) {
-		//	while(j < popped.size()) {
-		//		if (pushed[i] != popped[j]) {
-		//			s.push(pushed[i]);
-		//			i++;
-		//		}
-		//		else if(pushed[++i] == popped[++j])
-		//		{
-		//			j++;
-		//		}
-		//		else if(s.top() == popped[j])
-		//		{
-		//			j++;
-		//			s.pop();
-		//		}
-		//	}
-		//}
-		for (auto j : pushed) {
-			s.push(j);
-			while (!s.empty() && s.top() == popped[i]) {
+		int j = 0;
+		for (auto i : pushed) {
+			s.push(i);
+			while (!s.empty() && s.top() == popped[j]) {
 				s.pop();
-				i++;
+				++j;
 			}
 		}
 		return s.empty();

@@ -26,8 +26,24 @@ public:
 
 class Solution {
 public:
+	//void order(Node* root, Node* &head, Node* &pre) {
+	//	if (!root) return;
+	//	order(root->left, head, pre);
+	//	if (!head) {
+	//		head = root;
+	//		pre = root;
+	//	}
+	//	else
+	//	{
+	//		pre->right = root;
+	//		root->left = pre;
+	//		pre = root;
+	//	}
+	//	order(root->right, head, pre);
+	//}
+
 	void order(Node* root, Node* &head, Node* &pre) {
-		if (!root) return;
+		if (!root)return;
 		order(root->left, head, pre);
 		if (!head) {
 			head = root;

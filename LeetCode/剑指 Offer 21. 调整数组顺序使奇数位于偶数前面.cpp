@@ -32,13 +32,31 @@ public:
 	//	return nums;
 	//}
 
+	//vector<int> exchange(vector<int>& nums) {
+	//	int i = 0;
+	//	for (int j = 1; j < nums.size(); j++) {
+	//		if (nums[j] % 2 == 1) {
+	//			swap(nums[i], nums[j]);			
+	//		}
+	//		i++;
+	//	}
+	//	return nums;
+	//}
+	
 	vector<int> exchange(vector<int>& nums) {
 		int i = 0;
-		for (int j = 1; j < nums.size(); j++) {
-			if (nums[j] % 2 == 1) {
-				swap(nums[i], nums[j]);			
+		int j = nums.size() - 1;
+		while (i < j) {
+			if (nums[i] % 2 == 0 && nums[j] % 2 == 1) {
+				swap(nums[i], nums[j]);
 			}
-			i++;
+			else if (nums[i] % 2 == 1) {
+				++i;
+			}
+			else
+			{
+				--j;
+			}
 		}
 		return nums;
 	}

@@ -15,7 +15,7 @@ struct TreeNode {
 
 class Solution {
 public:
-	bool order(TreeNode* root1, TreeNode* root2) {
+	/*bool order(TreeNode* root1, TreeNode* root2) {
 		if (root1 == nullptr&&root2 == nullptr) {
 			return true;
 		}
@@ -23,6 +23,20 @@ public:
 			return false;
 		}
 
+		return order(root1->left, root2->right) && order(root1->right, root2->left);
+	}
+
+	bool isSymmetric(TreeNode* root) {
+		return order(root, root);
+	}*/
+
+	bool order(TreeNode* root1, TreeNode* root2) {
+		if (root1 == nullptr&&root2 == nullptr) {
+			return true;
+		}
+		if (root1 == nullptr || root2 == nullptr || root1->val != root2->val) {
+			return false;
+		}
 		return order(root1->left, root2->right) && order(root1->right, root2->left);
 	}
 

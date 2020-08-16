@@ -44,44 +44,94 @@ struct TreeNode {
 
 class Solution {
 public:
-	int high(TreeNode *root) {
-		if (root == nullptr) {
-			return 0;
-		}
-		int left = high(root->left);
-		int right = high(root->right);
-		int max = left > right ? left : right;
-		return max + 1;
+	//int high(TreeNode *root) {
+	//	if (root == nullptr) {
+	//		return 0;
+	//	}
+	//	int left = high(root->left);
+	//	int right = high(root->right);
+	//	int max = left > right ? left : right;
+	//	return max + 1;
+	//}
+
+	//vector<vector<int>> levelOrder(TreeNode* root) {
+	//	int root_size = high(root);
+	//	vector<vector<int>> ret(root_size);
+	//	//queue<TreeNode *> q;
+	//	//vector<int> level(10000);
+	//	queue < pair<int, TreeNode*> > q;
+	//	int i = 0;
+	//	TreeNode *tmp = root;
+	//	if (root) {
+	//		q.push({0, root});
+	//		//level[root->val] = i;
+	//	}
+	//	while (!q.empty()) {
+	//		tmp = q.front().second;
+	//		if (tmp->left) {
+	//			q.push({q.front().first+1, tmp->left});
+	//			//level[tmp->left->val] = level[tmp->val]+1;
+	//		}	
+	//		if (tmp->right) {
+	//			q.push({ q.front().first + 1, tmp->right });
+	//			//level[tmp->right->val] = level[tmp->val]+1;
+	//		}
+	//		
+	//		ret[q.front().first].push_back(q.front().second->val);
+	//		q.pop();
+	//		i++;
+	//	}
+	//	return ret;
+	//}
+
+	//int high(TreeNode* root) {
+	//	if (!root) {
+	//		return 0;
+	//	}
+	//	int left = high(root->left);
+	//	int right = high(root->right);
+	//	int max = left > right ? left : right;
+	//	return max + 1;
+	//}
+
+	//vector<vector<int>> levelOrder(TreeNode* root) {
+	//	vector<vector<int>> ret;
+	//	int len = high(root);
+	//	ret.resize(len);
+	//	queue<pair<TreeNode*, int>> level;
+	//	TreeNode* tmp;
+	//	int i = 0;
+	//	if (root) {
+	//		level.push({ root, i });
+	//		++i;
+	//	}
+	//	while (!level.empty()) {
+	//		tmp = level.front().first;
+	//		if (tmp->left)
+	//			level.push({ tmp->left, level.front().second+1});
+	//		if(tmp->right)
+	//			level.push({ tmp->right,level.front().second + 1 });
+	//		ret[level.front().second].push_back(tmp->val);
+	//		level.pop();
+	//	}
+	//	return ret;
+	//}
+
+public:
+	vector<vector<int>> levelOrder(TreeNode* root) {
+		vector<vector<int>> res;
+		dfs(root, res, 0);
+		return res;
 	}
 
-	vector<vector<int>> levelOrder(TreeNode* root) {
-		int root_size = high(root);
-		vector<vector<int>> ret(root_size);
-		//queue<TreeNode *> q;
-		//vector<int> level(10000);
-		queue < pair<int, TreeNode*> > q;
-		int i = 0;
-		TreeNode *tmp = root;
-		if (root) {
-			q.push({0, root});
-			//level[root->val] = i;
-		}
-		while (!q.empty()) {
-			tmp = q.front().second;
-			if (tmp->left) {
-				q.push({q.front().first+1, tmp->left});
-				//level[tmp->left->val] = level[tmp->val]+1;
-			}	
-			if (tmp->right) {
-				q.push({ q.front().first + 1, tmp->right });
-				//level[tmp->right->val] = level[tmp->val]+1;
-			}
-			
-			ret[q.front().first].push_back(q.front().second->val);
-			q.pop();
-			i++;
-		}
-		return ret;
+	void dfs(TreeNode* root, vector<vector<int>>& res, int level)
+	{
+		if (!root) return;
+		if (level >= res.size()) 
+			res.emplace_back(vector<int>());
+		res[level].emplace_back(root->val);
+		dfs(root->left, res, level + 1);
+		dfs(root->right, res, level + 1);
 	}
 };
 

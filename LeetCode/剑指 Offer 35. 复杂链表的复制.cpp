@@ -33,7 +33,7 @@ public:
 //		while (tmpHaed) {
 //			Node* inRet = new Node(tmpHaed->val);
 //			inRet->next = tmp[i].first;
-//			inRet->random = tmp[i].second;
+//			inRet->random = tmp[i].second;//卡在这里，没有复制
 //			ret->next = inRet;
 //			tmpHaed = tmpHaed->next;
 //			ret = ret->next;
@@ -47,24 +47,45 @@ public:
 class Solution {
 public:
 	Node* copyRandomList(Node* head) {
-		if (head == NULL)  return head;
-		unordered_map<Node*, Node*>mp;
-		Node *t = head;
-		while (t != NULL) {
-			mp[t] = new Node(t->val);
-			t = t->next;
+		//if (head == NULL)  return head;
+		//unordered_map<Node*, Node*>mp;
+		//Node *t = head;
+		//while (t != NULL) {
+		//	mp[t] = new Node(t->val);
+		//	t = t->next;
+		//}
+		//t = head;
+		//while (t != NULL) {
+		//	if (t->next) {
+		//		mp[t]->next = mp[t->next];
+		//	}
+		//	if (t->random) {
+		//		mp[t]->random = mp[t->random];
+		//	}
+		//	t = t->next;
+		//}
+		//return mp[head];
+
+		if (head == nullptr) {
+			return nullptr;
 		}
-		t = head;
-		while (t != NULL) {
-			if (t->next) {
-				mp[t]->next = mp[t->next];
-			}
-			if (t->random) {
-				mp[t]->random = mp[t->random];
-			}
-			t = t->next;
+		unordered_map<Node*, Node*> ret;
+		Node* tmp = head;
+		while (tmp) {
+			ret[tmp] = new Node(tmp->val);
+			tmp = tmp->next;
 		}
-		return mp[head];
+		tmp = head;
+		while (tmp) {
+			if (tmp->next) {
+				ret[tmp]->next = ret[tmp->next];
+			}
+			if (tmp->random) {
+				ret[tmp]->random = ret[tmp->random];
+			}
+			tmp = tmp->next;
+		}
+		return ret[head];
 	}
 };
 
