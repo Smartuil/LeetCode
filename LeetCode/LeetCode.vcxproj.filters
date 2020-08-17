@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="110. 平衡二叉树.cpp">
+    <ClCompile Include="733. 图像渲染.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
