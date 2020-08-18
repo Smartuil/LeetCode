@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="剑指 Offer 60. n个骰子的点数.cpp">
+    <ClCompile Include="128. 最长连续序列.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
