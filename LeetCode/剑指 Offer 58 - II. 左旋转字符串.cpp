@@ -14,7 +14,7 @@ public:
 		tmp = s.substr(0, n);
 		s.erase(0, n);
 		return s + tmp;
-	}
+	} 
 };
 
 int main() {

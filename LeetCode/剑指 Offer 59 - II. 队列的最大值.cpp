@@ -51,16 +51,49 @@ using namespace std;
 //	unordered_map<int, int> vec;
 //};
 
+//class MaxQueue {
+//	queue<int> q;
+//	deque<int> d;
+//public:
+//	MaxQueue() {
+//	}
+//
+//	int max_value() {
+//		if (d.empty())
+//			return -1;
+//		return d.front();
+//	}
+//
+//	void push_back(int value) {
+//		while (!d.empty() && d.back() < value) {
+//			d.pop_back();
+//		}
+//		d.push_back(value);
+//		q.push(value);
+//	}
+//
+//	int pop_front() {
+//		if (q.empty())
+//			return -1;
+//		int ans = q.front();
+//		if (ans == d.front()) {
+//			d.pop_front();
+//		}
+//		q.pop();
+//		return ans;
+//	}
+//};
+
 class MaxQueue {
-	queue<int> q;
-	deque<int> d;
 public:
 	MaxQueue() {
+
 	}
 
 	int max_value() {
-		if (d.empty())
+		if (d.empty()) {
 			return -1;
+		}
 		return d.front();
 	}
 
@@ -73,15 +106,18 @@ public:
 	}
 
 	int pop_front() {
-		if (q.empty())
+		if (q.empty()) {
 			return -1;
-		int ans = q.front();
-		if (ans == d.front()) {
+		}
+		int tmp = q.front();
+		if (tmp == d.front()) {
 			d.pop_front();
 		}
 		q.pop();
-		return ans;
+		return tmp;
 	}
+	queue<int> q;
+	deque<int> d;
 };
 
 /**

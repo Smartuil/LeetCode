@@ -15,18 +15,30 @@ struct ListNode {
 
 class Solution {
 public:
+	//ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+	//	if (headA == nullptr || headB == nullptr) {
+	//		return nullptr;
+	//	}
+	//	ListNode *h1 = headA, *h2 = headB;
+	//	while (h1 != h2) {
+
+	//		h1 = h1 == nullptr ? headB : h1->next;
+	//		h2 = h2 == nullptr ? headA : h2->next;
+	//	}
+
+	//	return h1;
+	//}
+
 	ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
 		if (headA == nullptr || headB == nullptr) {
 			return nullptr;
 		}
-		ListNode *h1 = headA, *h2 = headB;
-		while (h1 != h2) {
-
-			h1 = h1 == nullptr ? headB : h1->next;
-			h2 = h2 == nullptr ? headA : h2->next;
+		ListNode* tmpA = headA, *tmpB = headB;
+		while (tmpA != tmpB) {
+			tmpA = (tmpA == nullptr ? headB : tmpA->next);
+			tmpB = (tmpB == nullptr ? headA : tmpB->next);
 		}
-
-		return h1;
+		return tmpA;
 	}
 };
 

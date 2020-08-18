@@ -16,29 +16,42 @@ struct TreeNode {
 
 class Solution {
 public:
-	int order(TreeNode * root) {
+	//int order(TreeNode * root) {
+	//	if (root == nullptr) {
+	//		return 0;
+	//	}
+	//	int left = order(root->left);
+	//	if (left == -1) {
+	//		return -1;
+	//	}
+	//	int right = order(root->right);
+	//	if (right == -1) {
+	//		return -1;
+	//	}
+	//	if (abs(left - right) <= 1) {
+	//		return max(left, right) + 1;
+	//	}
+	//	else
+	//	{
+	//		return -1;
+	//	}
+	//}
+	bool flag = true;
+	int order(TreeNode* root) {
 		if (root == nullptr) {
 			return 0;
 		}
 		int left = order(root->left);
-		if (left == -1) {
-			return -1;
-		}
 		int right = order(root->right);
-		if (right == -1) {
-			return -1;
+		if (abs(left - right) > 1) {
+			flag = false;
 		}
-		if (abs(left - right) <= 1) {
-			return max(left, right) + 1;
-		}
-		else
-		{
-			return -1;
-		}
+		return max(left, right) + 1;
 	}
 
 	bool isBalanced(TreeNode* root) {
-		return order(root) != -1;
+		order(root);
+		return flag;
 	}
 };
 

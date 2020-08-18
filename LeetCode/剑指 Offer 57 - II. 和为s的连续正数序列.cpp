@@ -13,22 +13,22 @@ public:
 		vector<vector<int>>vec;
 		vector<int> res;
 		int sum = 0;
-		for (int l = 1, r = 2; l < r;) {
-			sum = (l + r)*(r - l + 1) / 2;
+		for (int i = 1, j = 2; i < j;) {
+			sum = (i + j)*(j - i + 1) / 2;
 			if (sum == target) {
 				res.clear();
-				for (int i = l; i <= r; i++) {
-					res.push_back(i);
+				for (int m = i; m <= j; m++) {
+					res.push_back(m);
 				}
 				vec.push_back(res);
-				l++;
+				j++;
 			}
-			else if (sum < target) {
-				r++;
+			else if (sum > target) {
+				i++;
 			}
 			else
 			{
-				l++;
+				j++;
 			}
 		}
 		return vec;

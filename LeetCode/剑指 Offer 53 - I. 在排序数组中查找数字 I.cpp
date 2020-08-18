@@ -9,7 +9,24 @@ using namespace std;
 
 class Solution {
 public:
+	int recursion(vector<int>& nums, int target) {
+		int i = 0;
+		int j = nums.size() - 1;
+		while (i <= j) {
+			int mid = (i + j) / 2;
+			if (nums[mid] <= target) {
+				i = mid + 1;
+			}
+			else
+			{
+				j = mid - 1;
+			}
+		}
+		return i;
+	}
+
 	int search(vector<int>& nums, int target) {
+		//return recursion(nums, target) - recursion(nums, target - 1);
 	//	if (nums.size() == 0) {
 	//		return 0;
 	//	}
@@ -46,6 +63,12 @@ public:
 		}
 		int left = j;
 		return right - left - 1;
+
+		//map<int, int> m;
+		//for (int i : nums) {
+		//	m[i]++;
+		//}
+		//return m[target];
 	}
 };
 

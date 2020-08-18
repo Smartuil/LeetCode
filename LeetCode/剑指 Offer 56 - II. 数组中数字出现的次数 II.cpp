@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <string>
 #include <unordered_set>
+#include <unordered_map>
 using namespace std;
 
 class Solution {
@@ -16,19 +17,31 @@ public:
 		//	twos = twos ^ num & ~ones;
 		//}
 		//return ones;
-		vector<int> count(32);
-		for (int num : nums) {
-			for (int i = 0; i < 32; i++) {
-				count[i] += num & 1;
-				num >>= 1;
+
+		//vector<int> count(32);
+		//for (int num : nums) {
+		//	for (int i = 0; i < 32; i++) {
+		//		count[i] += num & 1;
+		//		num >>= 1;
+		//	}
+		//}
+		//int res = 0;
+		//for (int i = 0; i < 32; i++) {
+		//	res <<= 1;
+		//	res |= count[31 - i] % 3;
+		//}
+		//return res;
+
+		unordered_map<int, int> mp;
+		for (int n : nums) mp[n] ++;
+		int ans;
+		for (auto pr : mp) {
+			if (pr.second == 1) {
+				ans = pr.first;
+				break;
 			}
 		}
-		int res = 0;
-		for (int i = 0; i < 32; i++) {
-			res <<= 1;
-			res |= count[31 - i] % 3;
-		}
-		return res;
+		return ans;
 	}
 };
 

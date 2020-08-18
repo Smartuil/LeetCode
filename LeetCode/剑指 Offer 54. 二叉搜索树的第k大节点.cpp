@@ -17,18 +17,29 @@ struct TreeNode {
 class Solution {
 public:
 	int ret = 0;
-	void order(TreeNode * root, int& k) {
-		if (root == nullptr) {
-			return;
+	//void order(TreeNode * root, int& k) {
+	//	if (root == nullptr) {
+	//		return;
+	//	}
+	//	order(root->right, k);
+	//	if (k == 0) {
+	//		return;
+	//	}
+	//	if (--k == 0) {
+	//		ret = root->val;
+	//	}
+	//	order(root->left, k);
+	//}
+
+	void order(TreeNode* root, int &k) {
+		if (root) {
+			order(root->right, k);
+			if (k>0) {
+				ret = root->val;
+				--k;
+			}	
+			order(root->left, k);
 		}
-		order(root->right, k);
-		if (k == 0) {
-			return;
-		}
-		if (--k == 0) {
-			ret = root->val;
-		}
-		order(root->left, k);
 	}
 
 	int kthLargest(TreeNode* root, int k) {

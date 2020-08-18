@@ -39,16 +39,34 @@ public:
 		}
 		deque<int> q;
 		vector<int> res(nums.size() - k + 1);
-		for (int i = 0; i < k; i++) {
+		//for (int i = 0; i < k; i++) {// 未形成窗口
+		//	while (!q.empty() && q.back() < nums[i]) {
+		//		q.pop_back();
+		//	}
+		//	q.push_back(nums[i]);
+		//}
+		//res[0] = q.front();
+		//for (int i = k; i < nums.size(); i++) {
+		//	if (q.front() == nums[i - k]) {
+		//		q.pop_front();//滑动窗口后移，将第一个元素移除
+		//	}
+		//	while (!q.empty() && q.back() < nums[i]) {//以保持 deque 递减
+		//		q.pop_back();
+		//	}
+		//	q.push_back(nums[i]);
+		//	res[i - k + 1] = q.front();
+		//}
+
+		for (int i = 0; i < k; ++i) {
 			while (!q.empty() && q.back() < nums[i]) {
 				q.pop_back();
 			}
 			q.push_back(nums[i]);
 		}
 		res[0] = q.front();
-		for (int i = k; i < nums.size(); i++) {
-			if (q.front() == nums[i - k]) {
-				q.pop_front();//滑动窗口后移，将第一个元素移除
+		for (int i = k; i < nums.size(); ++i) {
+			if (nums[i - k] == q.front()) {
+				q.pop_front();
 			}
 			while (!q.empty() && q.back() < nums[i]) {
 				q.pop_back();
@@ -57,6 +75,8 @@ public:
 			res[i - k + 1] = q.front();
 		}
 		return res;
+
+
 	}
 };
 

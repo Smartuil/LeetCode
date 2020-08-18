@@ -31,23 +31,42 @@ public:
 		//	}
 		//}
 		//return {};
+
+		//int i = 0;
+		//int j = nums.size()-1;
+		//int sum = 0;
+		//while (i < j) {
+		//	sum = nums[i] + nums[j];
+		//	if (sum > target) {
+		//		j -= 1;
+		//	}
+		//	else if(sum < target)
+		//	{
+		//		i += 1;
+		//	}
+		//	else
+		//	{
+		//		return{ nums[i], nums[j] };
+		//	}
+		//}
+		//return{};
+
 		int i = 0;
-		int j = nums.size()-1;
-		int sum = 0;
-		while (i < j) {
-			sum = nums[i] + nums[j];
-			if (sum > target) {
-				j -= 1;
+		int j = nums.size() - 1;
+		while (i <= j) {
+			if (nums[i] + nums[j] < target) {
+				++i;
 			}
-			else if(sum < target)
-			{
-				i += 1;
+			else if (nums[i] + nums[j] > target) {
+				--j;
 			}
 			else
 			{
-				return{ nums[i], nums[j] };
+				return{ nums[i] , nums[j] };
 			}
 		}
+
+
 		return{};
 	}
 };

@@ -15,7 +15,7 @@ public:
 			ret ^= i;
 		}
 		int div = 1;
-		while ((div&ret) == 0) {
+		while ((div&ret) == 0) {//不为 00 的最低位
 			div <<= 1;
 		}
 		int a = 0, b = 0;
@@ -29,6 +29,18 @@ public:
 			}
 		}
 		return vector<int>{a, b};
+
+		//map<int, int> m;
+		//vector<int> ret;
+		//for (int i : nums) {
+		//	m[i]++;
+		//}
+		//for (int i : nums) {
+		//	if (m[i] == 1) {
+		//		ret.push_back(i);
+		//	}
+		//}
+		//return ret;
 	}
 };
 

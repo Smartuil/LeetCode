@@ -9,18 +9,34 @@ using namespace std;
 
 class Solution {
 public:
+	//char firstUniqChar(string s) {
+	//	if (s.size() == 0) {
+	//		return ' ';
+	//	}
+
+	//	map<char, int> m;
+	//	for (int i = 0; i < s.size(); i++) {
+	//		m[s[i]]++;
+	//	}
+	//	for (int i = 0; i < s.size(); i++) {
+	//		if (m[s[i]] == 1) {
+	//			return s[i];
+	//		}
+	//	}
+	//	return ' ';
+	//}
+
 	char firstUniqChar(string s) {
 		if (s.size() == 0) {
 			return ' ';
 		}
-
 		map<char, int> m;
-		for (int i = 0; i < s.size(); i++) {
-			m[s[i]]++;
+		for (char c : s) {
+			m[c]++;
 		}
-		for (int i = 0; i < s.size(); i++) {
-			if (m[s[i]] == 1) {
-				return s[i];
+		for (char c : s) {
+			if (m[c] == 1) {
+				return c;
 			}
 		}
 		return ' ';

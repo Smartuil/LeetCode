@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="733. 图像渲染.cpp">
+    <ClCompile Include="剑指 Offer 60. n个骰子的点数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -7,23 +7,23 @@ using namespace std;
 
 class Solution {
 public:
-	int Count(int n)
-	{
-		int i;
+	//int Count(int n)
+	//{
+	//	int i;
 
-		if (n == 0)
-		{
-			i = 1;
-		}
+	//	if (n == 0)
+	//	{
+	//		i = 1;
+	//	}
 
-		for (i = 0; n != 0; i++)
-		{
-			n /= 10;
-		}
-		return i;
-	}
+	//	for (i = 0; n != 0; i++)
+	//	{
+	//		n /= 10;
+	//	}
+	//	return i;
+	//}
 
-	int countDigitOne(int n) {
+	int countDigitOne2(int n) {
 		//int ret = 0;
 		//int count = Count(n);
 		//for (int i = n; i > 0; i--) {
@@ -61,11 +61,36 @@ public:
 		}
 		return res;
 
+
 	}
+
+	//https://leetcode-cn.com/problems/1nzheng-shu-zhong-1chu-xian-de-ci-shu-lcof/solution/c-cong-ge-wei-bian-li-dao-zui-gao-wei-yi-ci-qiu-ji/
+	int countDigitOne(int n) {
+		int count = 0;
+		long i = 1;//指向遍历的位数，如i=1即个位，i=10即十位，...，因为n可以有31位，所以10^31用long存储
+		while (n / i != 0) {
+			int high = n / (i * 10);
+			int cur = (n / i) % 10;
+			int low = n - (n / i)*i;
+			if (cur == 0) {
+				count += high * i;
+			}
+			else if (cur == 1) {
+				count += high * i + 1 + low;
+			}
+			else
+			{
+				count += high * i + i;
+			}
+			i *= 10;
+		}
+		return count;
+	}
+
 };
 
 int main() {
 	Solution *solution = new Solution();
-	cout << solution->countDigitOne(1410065408);
+	cout << solution->countDigitOne(1112);
 	return 0;
 }

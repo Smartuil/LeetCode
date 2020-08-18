@@ -33,7 +33,7 @@ public:
 		{
 			sum += nums[i];
 			ret = std::max(ret, sum);
-			if (sum < 0) {
+			if (sum < 0) {//Ã»ÓĞ¹±Ï×Öµ£¬ÉáÆú
 				sum = 0;
 			}
 		}
@@ -43,11 +43,10 @@ public:
 
 	int maxSubArray(vector<int>& nums) {
 		int ret = nums[0];
-		int numsSize = int(nums.size());
-		for (int i = 1; i < numsSize; i++)
-		{
+		int n = nums.size();
+		for (int i = 1; i < n; ++i) {
 			nums[i] += max(nums[i - 1], 0);
-			ret = max(ret, nums[i]);
+			ret = max(nums[i], ret);
 		}
 
 		return ret;
