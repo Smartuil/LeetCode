@@ -6,14 +6,25 @@ using namespace std;
 
 class Solution {
 public:
+	//int maxProfit(vector<int>& prices) {
+	//	int cost = INT_MAX, profit = 0;
+	//	for (int price : prices) {
+	//		cost = min(cost, price);
+	//		profit = max(profit, price - cost);
+	//	}
+	//	return profit;
+	//}
+
 	int maxProfit(vector<int>& prices) {
-		int cost = INT_MAX, profit = 0;
+		priority_queue<int, vector<int>, greater<int> > q;
+		int ret = 0;
 		for (int price : prices) {
-			cost = min(cost, price);
-			profit = max(profit, price - cost);
+			q.push(price);
+			ret = max(ret, price - q.top());
 		}
-		return profit;
+		return ret;
 	}
+
 };
 
 int main() {
