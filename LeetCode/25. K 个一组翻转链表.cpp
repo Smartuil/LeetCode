@@ -80,7 +80,7 @@ int main() {
 	e->next = r;
 	r->next = t;
 	t->next = nullptr;
-	ListNode* ret = solution->reverseKGroup(q, 2);
+	ListNode* ret = solution->reverseKGroup(q, 4);
 	while (ret)
 	{
 		cout << ret->val << endl;
