@@ -19,10 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PrefectWorld-1.cpp" />
-    <ClCompile Include="PrefectWorld-2.cpp" />
-    <ClCompile Include="PrefectWorld-3.cpp" />
-    <ClCompile Include="PrefectWorld-4.cpp" />
+    <ClCompile Include="面试题 01.02. 判定是否互为字符重排.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

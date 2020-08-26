@@ -15,16 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PrefectWorld-1.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="PrefectWorld-2.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="PrefectWorld-3.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="PrefectWorld-4.cpp">
+    <ClCompile Include="面试题 01.02. 判定是否互为字符重排.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
