@@ -21,7 +21,7 @@ public:
 			ret.append(to_string(j - i));
 			i = j;
 		}
-		return ret.size() > S.size() ? S : ret;
+		return ret.size() >= S.size() ? S : ret;
 	}
 };
 
