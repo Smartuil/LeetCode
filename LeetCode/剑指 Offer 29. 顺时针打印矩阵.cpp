@@ -87,7 +87,7 @@ public:
 
 int main() {
 	Solution *solution = new Solution;
-	vector<vector<int>> matrix = { {3},{2}
+	vector<vector<int>> matrix = { {6,9,7}
 		//{1,2,3,4},
 		//{5,6,7,8},
 		//{9,10,11,12} 

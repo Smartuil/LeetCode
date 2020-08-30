@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <string>
 #include <unordered_set>
+#include <unordered_map>
 using namespace std;
 
 //class Solution {
@@ -89,15 +90,16 @@ public:
 	}
 
 
-	//https://leetcode-cn.com/problems/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof/solution/tu-jie-hua-dong-chuang-kou-shuang-zhi-zhen-shi-xia/
+//https://leetcode-cn.com/problems/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof/solution/tu-jie-hua-dong-chuang-kou-shuang-zhi-zhen-shi-xia/
 int lengthOfLongestSubstring(string s) {
-	map<char, int> m;
+	unordered_map<char, int> m;
 	int ret = 0, l = 0, r = 0;
 	while (r < s.size()) {
 		if (m.find(s[r]) != m.end()) {
 			l = max(l, m[s[r]] + 1);
 		}
-		m[s[r++]] = r;
+		m[s[r]] = r;
+		r++;
 		ret = max(r - l, ret);
 	}
 	return ret;
@@ -107,6 +109,6 @@ int lengthOfLongestSubstring(string s) {
 
 int main() {
 	Solution *solution = new Solution();
-	cout << /*solution->*/lengthOfLongestSubstring2("pwwkew");
+	cout << /*solution->*/lengthOfLongestSubstring2("abcabcbb");
 	return 0;
 }

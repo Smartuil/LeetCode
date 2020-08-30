@@ -46,7 +46,7 @@ public:
 
 int main() {
 	Solution *solution = new Solution();
-	vector<int> arr = { 4,1,4,6 };
+	vector<int> arr = { 4,2,4,6 };
 	vector<int> ret = solution->singleNumbers(arr);
 	for (auto i : ret) {
 		cout << i << " ";
