@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="面试题 02.01. 移除重复节点.cpp" />
+    <ClCompile Include="面试题 02.02. 返回倒数第 k 个节点.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
