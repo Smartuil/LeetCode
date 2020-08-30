@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="面试题 01.09. 字符串轮转.cpp">
+    <ClCompile Include="面试题 02.01. 移除重复节点.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
