@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="面试题 02.03. 删除中间节点.cpp">
+    <ClCompile Include="557. 反转字符串中的单词 III.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
