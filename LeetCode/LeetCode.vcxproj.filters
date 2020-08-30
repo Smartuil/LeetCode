@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="面试题 02.02. 返回倒数第 k 个节点.cpp">
+    <ClCompile Include="面试题 02.03. 删除中间节点.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
