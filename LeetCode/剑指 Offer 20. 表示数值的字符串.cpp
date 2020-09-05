@@ -135,61 +135,98 @@ using namespace std;
 //	}
 //};
 
+//class Solution {
+//public:
+//	bool isNumber(string s) {
+//		if (s.size() == 0) {
+//			return false;
+//		}
+//		if (s.size() == 1 && s[0] == ' ') {
+//			return false;
+//		}
+//		{
+//			//去掉首位空格
+//			while (s[0] == ' ') {
+//				s = s.substr(1);
+//			}
+//			int len = s.size();
+//			while (s[len - 1] == ' ') {
+//				int index = s.find_last_of(' ');
+//				s = s.substr(0, index);
+//				len = s.size();
+//			}
+//		}
+//		bool numFlag = false;
+//		bool dotFlag = false;
+//		bool eFlag = false;
+//		for (int i = 0; i < s.size(); ++i) {
+//			//判定为数字，则标记numFlag
+//			if (s[i] >= '0'&&s[i] <= '9') {
+//				numFlag = true;
+//			}
+//			//判定为.  需要没出现过.并且没出现过e
+//			else if (s[i] == '.' && !dotFlag && !eFlag) {
+//				dotFlag = true;
+//			}
+//			//判定为e，需要没出现过e，并且出过数字了
+//			else if ((s[i] == 'e' || s[i] == 'E') && !eFlag&&numFlag) {
+//				eFlag = true;
+//				numFlag = false;//为了避免123e这种请求，出现e之后就标志为false
+//			}
+//			//判定为+-符号，只能出现在第一位或者紧接e后面
+//			else if ((s[i] == '+' || s[i] == '-') && (i == 0 || s[i - 1] == 'e' || s[i - 1] == 'E')) {
+//
+//			}
+//			//其他情况，都是非法的
+//			else
+//			{
+//				return false;
+//			}
+//		}
+//
+//		return numFlag;
+//	}
+//};
 class Solution {
 public:
 	bool isNumber(string s) {
-		if (s.size() == 0) {
+		if (s.empty()) {
 			return false;
 		}
-		if (s.size() == 1 && s[0] == ' ') {
-			return false;
+		while (s[0] == ' ') {
+			s = s.substr(1);
 		}
-		{
-			//去掉首位空格
-			while (s[0] == ' ') {
-				s = s.substr(1);
-			}
-			int len = s.size();
-			while (s[len - 1] == ' ') {
-				int index = s.find_last_of(' ');
-				s = s.substr(0, index);
-				len = s.size();
-			}
+		int len = s.size();
+		while (s[len - 1] == ' ') {
+			s = s.substr(0, len);
+			len = s.size();
 		}
-		bool numFlag = false;
-		bool dotFlag = false;
-		bool eFlag = false;
-		for (int i = 0; i < s.size(); ++i) {
-			//判定为数字，则标记numFlag
+		bool isNum = false;
+		bool isDot = false;
+		bool isSign = false;
+		for (int i = 0; i < len; ++i) {
 			if (s[i] >= '0'&&s[i] <= '9') {
-				numFlag = true;
+				isNum = true;
 			}
-			//判定为.  需要没出现过.并且没出现过e
-			else if (s[i] == '.' && !dotFlag && !eFlag) {
-				dotFlag = true;
+			else if ((s[i] == '-' || s[i] == '+') && !isSign) {
+				isSign = true;
 			}
-			//判定为e，需要没出现过e，并且出过数字了
-			else if ((s[i] == 'e' || s[i] == 'E') && !eFlag&&numFlag) {
-				eFlag = true;
-				numFlag = false;//为了避免123e这种请求，出现e之后就标志为false
+			else if (s[i] == '.'&&isNum && !isDot) {
+				isDot = true;
+				isNum = false;
 			}
-			//判定为+-符号，只能出现在第一位或者紧接e后面
-			else if ((s[i] == '+' || s[i] == '-') && (i == 0 || s[i - 1] == 'e' || s[i - 1] == 'E')) {
+			else if ((s[i] == 'e' || s[i] == 'E') && (i != 0 || s[i - 1] != 'e' || s[i - 1] != 'E')) {
 
 			}
-			//其他情况，都是非法的
-			else
-			{
+			else {
 				return false;
 			}
 		}
-
-		return numFlag;
+		return isNum;
 	}
 };
-
 int main() {
 	Solution *solution = new Solution();
-	cout << solution->isNumber("1  ");
+	cout << solution->isNumber("3.1415");
 	return 0;
 }

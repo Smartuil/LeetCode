@@ -36,7 +36,7 @@ const vector<int> Solution::fac = { 0,1,2,6,24,120,720,5040,40320,362880,3628800
 
 int main() {
 	Solution *solution = new Solution;
-	cout << solution->getPermutation(4, 9).c_str();
+	cout << solution->getPermutation(3, 4).c_str();
 
 	return 0;
 }

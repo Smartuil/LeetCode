@@ -112,30 +112,57 @@ using namespace std;
 //};
 
 
+//class Solution {
+//public:
+//	void printNumbers(int n, int index, string& str, vector<int> &rs) {
+//		if (index == n) {
+//			int num = atoi(str.c_str());
+//			if(num)
+//				rs.push_back(num);
+//			return;
+//		}
+//		else
+//		{
+//			for (int i = 0; i < 10; i++) {
+//				str[index] = i + '0';
+//				printNumbers(n, index + 1, str, rs);
+//			}
+//		}
+//	}
+//
+//	vector<int> printNumbers(int n) {
+//		vector<int> rs;
+//		string str;
+//		str.resize(n);
+//		printNumbers(n, 0, str, rs);
+//		return rs;
+//	}
+//};
+
 class Solution {
 public:
-	void printNumbers(int n, int index, string& str, vector<int> &rs) {
+	void print(vector<int>& ret, int index, int n, string &s) {
 		if (index == n) {
-			int num = atoi(str.c_str());
-			if(num)
-				rs.push_back(num);
-			return;
+			int tmp = atoi(s.c_str());
+			if (tmp) {
+				ret.push_back(tmp);
+				return;
+			}
 		}
-		else
-		{
-			for (int i = 0; i < 10; i++) {
-				str[index] = i + '0';
-				printNumbers(n, index + 1, str, rs);
+		else {
+			for (int i = 0; i < 10; ++i) {
+				s[index] = i + '0';
+				print(ret, index + 1, n, s);
 			}
 		}
 	}
 
 	vector<int> printNumbers(int n) {
-		vector<int> rs;
-		string str;
-		str.resize(n);
-		printNumbers(n, 0, str, rs);
-		return rs;
+		vector<int> ret;
+		string s;
+		s.resize(n);
+		print(ret, 0, n, s);
+		return ret;
 	}
 };
 

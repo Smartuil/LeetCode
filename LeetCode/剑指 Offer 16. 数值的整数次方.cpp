@@ -30,13 +30,13 @@ public:
 	//	return ret;
 	//}
 
-	double fastPow(double x, int n) {
+	double fastPow(double x, long n) {
 		if (n == 0) {
 			return 1;
 		}
 		double half = fastPow(x, n / 2);
 		if (n % 2 == 0) {
-			return half * half;
+			return half * half * x;
 		}
 		else
 		{
@@ -58,6 +58,6 @@ public:
 
 int main() {
 	Solution *solution = new Solution();
-	cout << solution->myPow(2.00000, -2);
+	cout << solution->myPow(2.00000, -2147483648);
 	return 0;
 }
