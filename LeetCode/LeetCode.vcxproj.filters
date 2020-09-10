@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="删除链表中的节点.cpp">
+    <ClCompile Include="反转链表.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
