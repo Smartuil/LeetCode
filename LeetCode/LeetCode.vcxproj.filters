@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="最小栈.cpp">
+    <ClCompile Include="Fizz Buzz.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
