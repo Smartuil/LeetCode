@@ -20,7 +20,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="位1的个数.cpp">
+    <ClCompile Include="汉明距离.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
