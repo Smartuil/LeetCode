@@ -15,7 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="637. 二叉树的层平均值.cpp">
+    <ClInclude Include="A Star\aStar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="位1的个数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
