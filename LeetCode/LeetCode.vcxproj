@@ -22,7 +22,7 @@
     <ClInclude Include="A Star\aStar.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="颠倒二进制位.cpp" />
+    <ClCompile Include="杨辉三角.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
