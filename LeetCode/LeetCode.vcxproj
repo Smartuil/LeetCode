@@ -22,7 +22,7 @@
     <ClInclude Include="A Star\aStar.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="汉明距离.cpp" />
+    <ClCompile Include="颠倒二进制位.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
