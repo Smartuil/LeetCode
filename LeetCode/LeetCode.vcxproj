@@ -22,7 +22,7 @@
     <ClInclude Include="A Star\aStar.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="矩阵置零.cpp" />
+    <ClCompile Include="递增的三元子序列.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
