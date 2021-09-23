@@ -20,7 +20,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="二叉树的中序遍历.cpp">
+    <ClCompile Include="326. 3的幂.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
