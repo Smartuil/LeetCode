@@ -20,7 +20,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="326. 3的幂.cpp">
+    <ClCompile Include="786. 第 K 个最小的素数分数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
