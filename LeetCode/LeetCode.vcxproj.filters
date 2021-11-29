@@ -20,7 +20,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="786. 第 K 个最小的素数分数.cpp">
+    <ClCompile Include="1968. 构造元素不等于两相邻元素平均值的数组.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
