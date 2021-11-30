@@ -20,7 +20,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1968. 构造元素不等于两相邻元素平均值的数组.cpp">
+    <ClCompile Include="400. 第 N 位数字.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
