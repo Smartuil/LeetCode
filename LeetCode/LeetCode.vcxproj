@@ -22,7 +22,7 @@
     <ClInclude Include="A Star\aStar.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="400. 第 N 位数字.cpp" />
+    <ClCompile Include="462. 最少移动次数使数组元素相等 II.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
