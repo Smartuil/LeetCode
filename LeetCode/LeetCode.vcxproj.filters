@@ -20,7 +20,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="462. 最少移动次数使数组元素相等 II.cpp">
+    <ClCompile Include="1441. 用栈操作构建数组.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
