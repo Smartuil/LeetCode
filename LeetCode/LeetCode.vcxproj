@@ -22,7 +22,7 @@
     <ClInclude Include="A Star\aStar.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="718. 最长重复子数组.cpp" />
+    <ClCompile Include="334. 递增的三元子序列.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
