@@ -15,12 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="A Star\aStar.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="334. 递增的三元子序列.cpp">
+    <ClCompile Include="2409. 统计共同度过的日子数.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
