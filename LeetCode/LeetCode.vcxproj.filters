@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1375. 二进制字符串前缀一致的次数.cpp">
+    <ClCompile Include="706.设计哈希映射.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
