@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LRU.cpp">
+    <ClCompile Include="1146.快照数组.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
